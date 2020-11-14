@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: dbfb17fd685a35c4ca4ec04ed0cbe141
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Glass
+    100004: Main
+    100006: Main_Barre
+    100008: Main_Bcatc
+    100010: Main_bipod
+    100012: Main_Catch
+    100014: Main_Grip
+    100016: Main_Keych
+    100018: Main_Mag
+    100020: Main_Pin
+    100022: Main_RailP
+    100024: Main_Scope
+    100026: Main_Sigh0
+    100028: Main_Sight
+    100030: Main_Stock
+    400000: //RootNode
+    400002: Glass
+    400004: Main
+    400006: Main_Barre
+    400008: Main_Bcatc
+    400010: Main_bipod
+    400012: Main_Catch
+    400014: Main_Grip
+    400016: Main_Keych
+    400018: Main_Mag
+    400020: Main_Pin
+    400022: Main_RailP
+    400024: Main_Scope
+    400026: Main_Sigh0
+    400028: Main_Sight
+    400030: Main_Stock
+    2300000: Glass
+    2300002: Main
+    2300004: Main_Barre
+    2300006: Main_Bcatc
+    2300008: Main_bipod
+    2300010: Main_Catch
+    2300012: Main_Grip
+    2300014: Main_Keych
+    2300016: Main_Mag
+    2300018: Main_Pin
+    2300020: Main_RailP
+    2300022: Main_Scope
+    2300024: Main_Sigh0
+    2300026: Main_Sight
+    2300028: Main_Stock
+    3300000: Glass
+    3300002: Main
+    3300004: Main_Barre
+    3300006: Main_Bcatc
+    3300008: Main_bipod
+    3300010: Main_Catch
+    3300012: Main_Grip
+    3300014: Main_Keych
+    3300016: Main_Mag
+    3300018: Main_Pin
+    3300020: Main_RailP
+    3300022: Main_Scope
+    3300024: Main_Sigh0
+    3300026: Main_Sight
+    3300028: Main_Stock
+    4300000: Main_Stock
+    4300002: Glass
+    4300004: Main
+    4300006: Main_bipod
+    4300008: Main_Mag
+    4300010: Main_Bcatc
+    4300012: Main_Scope
+    4300014: Main_Catch
+    4300016: Main_Sight
+    4300018: Main_Keych
+    4300020: Main_Sigh0
+    4300022: Main_RailP
+    4300024: Main_Pin
+    4300026: Main_Barre
+    4300028: Main_Grip
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
