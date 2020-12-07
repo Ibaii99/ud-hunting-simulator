@@ -5845,9 +5845,9 @@ MonoBehaviour:
   animalOriginal: {fileID: 3718980764213619475, guid: 9123b15ea6d623a41a6522f28fb6e260,
     type: 3}
   animalCount: 2
-  range: 20
+  range: 40
   heigh: 7
-  minimunDistance: 14
+  minimunDistance: 15
 --- !u!1001 &571148002
 PrefabInstance:
   m_ObjectHideFlags: 0
