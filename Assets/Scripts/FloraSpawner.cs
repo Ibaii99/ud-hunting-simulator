@@ -6,6 +6,7 @@ public class FloraSpawner : MonoBehaviour
 {
     public GameObject floraOriginal;
 
+
     public int floraCount = 10;
 
     public int range = 10;
@@ -18,6 +19,7 @@ public class FloraSpawner : MonoBehaviour
 
     private void Awake()
     {
+	floraOriginal.tag = "Ground";
         floras = new Vector3[floraCount];
         int i = 0;
         while (i < floraCount)
