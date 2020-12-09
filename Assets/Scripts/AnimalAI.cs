@@ -24,6 +24,10 @@ public class AnimalAI : MonoBehaviour
     void Start()
     {
         rotation = Random.Range(-rotationRange, rotationRange);
+        while (rotation == 0)
+        {
+            rotation = Random.Range(-rotationRange, rotationRange);
+        }
         isMoving = false;
         animalRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
