@@ -11,6 +11,7 @@ public class SoldierMovement : MonoBehaviour
     public float moveSpeed = 30;
     public float rotateSpeed = 100;
     public bool isGrounded = true;
+    public Camera camera;
 
     private void Awake()
     {
@@ -44,16 +45,20 @@ public class SoldierMovement : MonoBehaviour
         {
             Move2(-1);
         }
-        //if (Input.GetKey(KeyCode.LeftAlt))
-       // {
+        if (HasMouseMoved())
+        {
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 
             transform.rotation = Quaternion.Euler(
-                transform.rotation.eulerAngles.x - mouseY,
+                0,
                 transform.rotation.eulerAngles.y + mouseX,
                 0);
-       // }
+            camera.transform.rotation = Quaternion.Euler(
+                    camera.transform.rotation.eulerAngles.x - mouseY,
+                    transform.rotation.eulerAngles.y + mouseX,
+                    0);
+        }
 
     }
 
@@ -71,14 +76,21 @@ public class SoldierMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            print("True");
         }
+        print("Ha salido de colisión pero no era Ground");
     }
 
     private void OnCollisionExit(Collision collision)
     {
         isGrounded = false;
+        print("False");
+    }
+    bool HasMouseMoved()
+    { 
+        return (Input.GetAxis("Mouse X") != 0) || (Input.GetAxis("Mouse Y") != 0);
     }
 }
