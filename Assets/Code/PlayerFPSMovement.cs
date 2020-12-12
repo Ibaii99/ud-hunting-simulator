@@ -7,6 +7,7 @@ public class PlayerFPSMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 10f;
+    public float runSpeed = 20f;
     public float gravity = -10f;
     public float jumpHeight = 5f;
 
@@ -14,8 +15,17 @@ public class PlayerFPSMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    Animator anim;
+    int jumpHash = Animator.StringToHash("Jump");
+    int moveHash = Animator.StringToHash("Move");
+    int runHash = Animator.StringToHash("Run");
+
     Vector3 velocity;
     bool isGrounded;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -30,12 +40,31 @@ public class PlayerFPSMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+        if(x== 0 && z == 0) {
+            anim.SetBool(moveHash, false);
+        }
+        else
+        {
+            anim.SetBool(moveHash, true);
+        }
 
-        controller.Move(move * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(move * runSpeed * Time.deltaTime);
+            anim.SetBool(runHash, true);
+        }
+        else
+        {
+            controller.Move(move * speed * Time.deltaTime);
+            anim.SetBool(runHash, false);
+        }
+
+        
 
         if (Input.GetButton("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            anim.SetTrigger(jumpHash);
         }
 
         velocity.y += gravity * Time.deltaTime;
