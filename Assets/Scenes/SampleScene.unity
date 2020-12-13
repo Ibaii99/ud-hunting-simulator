@@ -5460,6 +5460,8 @@ MonoBehaviour:
   controller: {fileID: 479103597}
   weapon: {fileID: 8344438228751552141, guid: 188889c2e374ea349985ba07f4ae537e, type: 3}
   camara: {fileID: 111003585}
+  bullet: {fileID: 1000011023395326, guid: 2ce15a1900ef14a459f78260cd05a3dc, type: 3}
+  bulletSpeed: 1000
 --- !u!143 &479103597
 CharacterController:
   m_ObjectHideFlags: 0
@@ -14520,6 +14522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304bc66fc1cb56047b1f86d3ff6bf356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &1269815064
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,10 @@ public class PlayerCombat : MonoBehaviour
     public CharacterController controller;
     public GameObject weapon;
     public Camera camara;
+    public GameObject bullet;
+    public float bulletSpeed;
 
+    GameObject newRightGun;
     Animator anim;
     Animator weaponAnim;
     int aimingHash = Animator.StringToHash("Aiming");
@@ -24,8 +27,7 @@ public class PlayerCombat : MonoBehaviour
     {
         startingFOV = camara.fieldOfView;
         anim = GetComponent<Animator>();
-        print(anim.name);
-        GameObject newRightGun = (GameObject)Instantiate(weapon);
+        newRightGun = (GameObject)Instantiate(weapon);
         newRightGun.transform.parent = rightGunBone;
         newRightGun.transform.localPosition = Vector3.zero;
         newRightGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
@@ -47,10 +49,8 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse1) && (x == 0 && z == 0))
         {
-            print("Apuntando");
             if (apuntando == false)
             {
-                print("Empezando a apuntar");
                 anim.SetBool(aimingHash, true);
                 apuntando = true;
                 currentFOV = startingFOV - 8;
@@ -66,8 +66,10 @@ public class PlayerCombat : MonoBehaviour
         camara.fieldOfView = currentFOV;
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            print("Disparo");
             anim.SetTrigger(shootHash);
+            GameObject bulletInstance = Instantiate(bullet, newRightGun.transform.GetChild(0).gameObject.transform.position, Quaternion.identity) as GameObject;
+            Rigidbody bulletInstanceRigibody = bulletInstance.GetComponent<Rigidbody>();
+            bulletInstanceRigibody.AddForce(camara.transform.forward * bulletSpeed);
         }
         
 

@@ -1158,9 +1158,10 @@ GameObject:
   - component: {fileID: 8900692648495649382}
   - component: {fileID: 8900692647184497066}
   - component: {fileID: 8900692647184497065}
+  - component: {fileID: 6094555457659770382}
   m_Layer: 0
   m_Name: Rhino
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,8 +1213,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.1, y: 0.07, z: 0.17}
+  m_Center: {x: 0, y: -0.01, z: 0.03}
 --- !u!143 &8900692647184497066
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1248,6 +1249,19 @@ MonoBehaviour:
   animalCharacter: {fileID: 8900692647184497066}
   rotationRange: 4
   moveTime: 1
+--- !u!114 &6094555457659770382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900692647423209707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304bc66fc1cb56047b1f86d3ff6bf356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &8900692647423209709
 GameObject:
   m_ObjectHideFlags: 0
