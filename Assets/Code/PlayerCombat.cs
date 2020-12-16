@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerCombat : MonoBehaviour
@@ -33,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
         newRightGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
         currentFOV = camara.fieldOfView;
     }
-
+    
     void Update()
     {
         if (health <= 0)
@@ -42,10 +43,13 @@ public class PlayerCombat : MonoBehaviour
             //Finalizar la partida
         }
 
-        
+        if(Input.GetKeyDown(KeyCode.R)){
+		SceneManager.LoadScene("MainScene");
+		//Volver al menu principal
+	}
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
+	
 
         if (Input.GetKey(KeyCode.Mouse1) && (x == 0 && z == 0))
         {
@@ -75,4 +79,10 @@ public class PlayerCombat : MonoBehaviour
 
 
     }
+    void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.tag == "Enemy"){
+            Debug.Log("Le dio");   
+            SceneManager.LoadScene("MainScene");     
+        }
+     }
 }

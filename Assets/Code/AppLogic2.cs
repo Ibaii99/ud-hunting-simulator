@@ -35,12 +35,12 @@ public class AppLogic2 : MonoBehaviour
     public void CargarJuegoIntermedio()
     {
         // cambiar a SceneIntermedio
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleSceneInter");
     }
     public void CargarJuegoDificil()
     {
         // cambiar a SceneDificil
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleSceneDif");
     }
 
 }
