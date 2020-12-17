@@ -6606,7 +6606,7 @@ MonoBehaviour:
   animalOriginal: {fileID: 8900692647423209707, guid: 4dcd3b316b33551488b6a41aa146ed40,
     type: 3}
   animalCount: 8
-  range: 40
+  range: 120
   heigh: 5
   minimunDistance: 15
 --- !u!114 &569952734
