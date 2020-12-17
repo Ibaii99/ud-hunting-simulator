@@ -13,9 +13,9 @@ public class Dificultad : MonoBehaviour
     {
         botonFacil.onClick.AddListener(OnClickFacil);
 
-        botonFacil.onClick.AddListener(OnClickIntermedio);
+        botonIntermedio.onClick.AddListener(OnClickIntermedio);
 
-        botonFacil.onClick.AddListener(OnClickDificil);
+        botonDificil.onClick.AddListener(OnClickDificil);
 
     }
 
