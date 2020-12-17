@@ -20,10 +20,17 @@ public class PlayerCombat : MonoBehaviour
     int shootHash = Animator.StringToHash("Shoot");
     int deathHash = Animator.StringToHash("Death");
     int health = 100;
+    int playerScore = 5000;
+    int enemigos;
     bool apuntando = false;
     private float currentFOV;
     private float startingFOV;
 
+    void OnDisable()
+    {
+        PlayerPrefs.SetInt("score", playerScore);
+        print("Ha salido");
+    }
     private void Start()
     {
         startingFOV = camara.fieldOfView;
@@ -33,20 +40,34 @@ public class PlayerCombat : MonoBehaviour
         newRightGun.transform.localPosition = Vector3.zero;
         newRightGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
         currentFOV = camara.fieldOfView;
+        enemigos = GameObject.FindGameObjectsWithTag("Enemy").Length;
     }
-    
+
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
+
     void Update()
     {
+        int enemigosActuales = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemigosActuales < enemigos)
+        {
+            playerScore += 1000;
+            enemigos = enemigosActuales;
+        }
+        playerScore -= 1;
         if (health <= 0)
         {
             anim.SetTrigger(deathHash);
             //Finalizar la partida
         }
 
-        if(Input.GetKeyDown(KeyCode.R)){
-		SceneManager.LoadScene("MainScene");
-		//Volver al menu principal
-	}
+        if(Input.GetKeyDown(KeyCode.R) || GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+		    SceneManager.LoadScene("FinalScene");
+		    //Escena de puntuación
+	    }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 	

@@ -19,6 +19,7 @@ public class AppLogic : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (instance != null)
         {
             Destroy(gameObject);
