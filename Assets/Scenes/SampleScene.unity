@@ -6605,7 +6605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalOriginal: {fileID: 8900692647423209707, guid: 14bd94566308bef4ebf6c61a289c168b,
     type: 3}
-  animalCount: 2
+  animalCount: 5
   range: 40
   heigh: 5
   minimunDistance: 15

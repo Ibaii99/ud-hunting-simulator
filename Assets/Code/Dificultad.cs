@@ -21,14 +21,17 @@ public class Dificultad : MonoBehaviour
 
     private void OnClickFacil()
     {
+	Debug.Log("Fácil");
         AppLogic2.Instance.CargarJuegoFacil();
     }
     private void OnClickIntermedio()
     {
+	Debug.Log("Inter");
         AppLogic2.Instance.CargarJuegoIntermedio();
     }
     private void OnClickDificil()
     {
+	Debug.Log("Dif");
         AppLogic2.Instance.CargarJuegoDificil();
     }
 
