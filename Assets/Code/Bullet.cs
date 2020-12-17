@@ -5,9 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-
-
-    // Update is called once per frame
+  
     void Update()
     {
         
@@ -16,8 +14,6 @@ public class Bullet : MonoBehaviour
     {
        Destroy(GetComponent<Collider>());
        Destroy(GetComponent<Renderer>());
-       Destroy(gameObject, 0.1f);
-
-        
+       Destroy(gameObject, 0.1f);  
     }
 }
