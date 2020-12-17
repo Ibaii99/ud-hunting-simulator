@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerCombat : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     public Camera camara;
     public GameObject bullet;
     public float bulletSpeed;
+    public Text puntuacionText;
 
     GameObject newRightGun;
     Animator anim;
@@ -50,6 +52,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
+        puntuacionText.text = "Puntuación: " + playerScore.ToString();
         int enemigosActuales = GameObject.FindGameObjectsWithTag("Enemy").Length;
         if (enemigosActuales < enemigos)
         {
